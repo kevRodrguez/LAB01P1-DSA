@@ -43,16 +43,10 @@
                                     <input type="text" class="form-control" id="inputNombre" required
                                         placeholder="Bryan Escobar">
                                 </div>
-                                <div class="mb-3">
-                                    <label for="companyName" class="form-label fw-semibold fs-6">Nombre Empresa
+                                <div>
+                                    <label for="fechaEntrada" class="form-label fw-semibold fs-6">Fecha de Entrada
                                         *</label>
-                                    <input type="text" class="form-control" id="companyName" required
-                                        placeholder="Ej. Google">
-                                    <div class="mt-2">
-                                        <p class="form-text text fw-semibold text-black-50">Razón social o nombre
-                                            comercial
-                                        </p>
-                                    </div>
+                                    <input type="date" class="form-control" id="inputFechaEntrada" required>
                                 </div>
                             </div>
 
@@ -60,62 +54,43 @@
                             <!-- col 2 -->
                             <div class="col-sm-4">
                                 <div class="mb-3">
-                                    <label for="jobLocation" class="form-label fw-semibold fs-6">Ubicación *</label>
-                                    <input type="text" class="form-control" id="jobLocation" required
-                                        placeholder="Ej. San Salvador, SV, o REMOTO">
-                                    <div class="mt-2">
-                                        <p class="form-text text fw-semibold text-black-50">Ciudad y país (o "Remoto")
-                                        </p>
-                                    </div>
+                                    <label for="email" class="form-label fw-semibold fs-6">Email *</label>
+                                    <input type="email" class="form-control" id="inputEmail" required
+                                        placeholder="ejemplo@correo.com">
                                 </div>
-                                <div class="mb-3">
-                                    <label for="companyUrl" class="form-label fw-semibold fs-6">URL Logo Empresa
+                                <div>
+                                    <label for="fechaSalida" class="form-label fw-semibold fs-6">Fecha de Salida
                                         *</label>
-                                    <input type="text" class="form-control" id="companyUrl" required
-                                        placeholder="Ej. https://www.ejemplo.com/logo.png">
-                                    <div class="mt-2">
-                                        <p class="form-text text fw-semibold text-black-50">Enlace directo a la imagen
-                                            (PNG, JPG, SVG)</p>
-                                    </div>
+                                    <input type="date" class="form-control" id="inputFechaSalida" required>
                                 </div>
                             </div>
 
                             <!-- col 3 -->
                             <div class="col-sm-4">
                                 <div class="mb-3">
-                                    <label for="jobType" class="form-label fw-semibold fs-6">Tipo de trabajo *</label>
-                                    <select class="form-select" id="jobType" required>
-                                        <option value="" disabled selected>Selecciona una opción</option>
-                                        <option value="remote">Remoto</option>
-                                        <option value="on-site">Presencial</option>
-                                        <option value="hybrid">Híbrido</option>
-                                    </select>
-                                    <div class="mt-2">
-                                        <p class="form-text text fw-semibold text-black-50">Modalidad principal del
-                                            puesto
-                                        </p>
-                                    </div>
+                                    <label for="telefono" class="form-label fw-semibold fs-6">Teléfono *</label>
+                                    <input type="tel" class="form-control" id="inputTelefono" required
+                                        placeholder="7061-2813">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="companyName" class="form-label fw-semibold fs-6">Nombre Empresa
-                                        *</label>
-                                    <input type="text" class="form-control" id="companyName" required
-                                        placeholder="Ej. Google">
-                                    <div class="mt-2">
-                                        <p class="form-text text fw-semibold text-black-50">Razón social o nombre
-                                            comercial
-                                        </p>
-                                    </div>
+                                    <label for="personas" class="form-label fw-semibold fs-6">Personas *</label>
+                                    <input type="number" class="form-control" id="inputPersonas" required
+                                        placeholder="2">
                                 </div>
+                            </div>
+
+                            <!-- noches y total -->
+                            <div class="mb-3">
+                                <h3 id="txtNumeroNoches" class="form-label fw-semibold fs-6 mb-3">Noches: 0</h3>
+                                <h3 id="txtTotal" class="form-label fw-semibold fs-6">Total: $0</h3>
                             </div>
 
 
 
-
                             <!-- Submit Button -->
-                            <div class=" d-flex justify-content-end">
+                            <div class=" d-flex justify-content-start">
                                 <button type="submit" class="btn btn-primary btn-md px-4 rounded-pill">
-                                    Guardar
+                                    Agregar Reserva
                                 </button>
                             </div>
 
