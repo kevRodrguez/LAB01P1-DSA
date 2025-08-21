@@ -1,7 +1,21 @@
 
+//establecemos el minimo de la fecha de entrada como hoy
+const today = new Date();
+
+const yesterday = new Date(today)
+
+yesterday.setDate(today.getDate() - 1);
+document.getElementById("inputFechaEntrada").min = yesterday.toISOString().split('T')[0];
+
+//establecemos una fecha default para la fecha de salida.
+
+document.getElementById("inputFechaSalida").value = new Date().toISOString();
+
 const cancelarReserva = (event) => {
     const btnCancelar = event.currentTarget;
 
+
+    console.log(btnCancelar)
     btnCancelar.parentElement.parentElement.remove()
 }
 
