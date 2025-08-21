@@ -13,7 +13,12 @@ const calcularNumeroNoches = (fechaEntrada, fechaSalida) => {
     return totalNoches;
 }
 
-const mostrarEstadisticas = (nNoches, total) => {
+const mostrarEstadisticas = () => {
+
+
+    const fechaEntrada = document.getElementById("inputFechaEntrada").value;
+    const fechaSalida = document.getElementById("inputFechaSalida")
+    const nNoches = calcularNumeroNoches()
     const txtNumeroNoches = document.getElementById("txtNumeroNoches");
 
     const txtTotalReserva = document.getElementById("txtTotalReserva")
@@ -61,9 +66,9 @@ const agregarReserva = (event) => {
                         </div>
 
                         <div class="card-subtitle d-flex align-items-center" style="gap: 10px;">
-                            <h5 class="fw-light fs-5" id="fechaEntrada">${fechaEntrada}</h5>
+                            <h5 class="fw-light fs-5" id="fechaEntrada">${fechaEntrada.toLocaleDateString()}</h5>
                             <h5 class="fw-light fs-5">=></h5>
-                            <h5 class="fw-light fs-5" id="fechaSalida">${fechaSalida}</h5>
+                            <h5 class="fw-light fs-5" id="fechaSalida">${fechaSalida.toLocaleDateString()}</h5>
 
                             <h5 class="fw-light fs-5" id="personas">personas: ${nPersonas}</h5>
                             <h5 class="fw-light fs-5">|</h5>
@@ -77,7 +82,7 @@ const agregarReserva = (event) => {
                     </div>
 
                     <div class="col-12 col-sm-2">
-                        <button class="btn btn-danger" id="btnCancelar">Cancelar</button>
+                        <button class="btn btn-danger" id="btnCancelar" onClick("cancelarReserva(event)")>Cancelar</button>
                     </div>
                 </div>
             </div>`

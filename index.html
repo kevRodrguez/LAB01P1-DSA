@@ -45,7 +45,8 @@
                                 <div>
                                     <label for="fechaEntrada" class="form-label fw-semibold fs-6">Fecha de Entrada
                                         *</label>
-                                    <input type="date" class="form-control" id="inputFechaEntrada" required>
+                                    <input type="date" class="form-control" id="inputFechaEntrada" required
+                                        oninput="mostrarEstadisticas()">
                                 </div>
                             </div>
 
@@ -60,7 +61,8 @@
                                 <div>
                                     <label for="fechaSalida" class="form-label fw-semibold fs-6">Fecha de Salida
                                         *</label>
-                                    <input type="date" class="form-control" id="inputFechaSalida" required>
+                                    <input type="date" class="form-control" id="inputFechaSalida" required
+                                        oninput="mostrarEstadisticas()">
                                 </div>
                             </div>
 
@@ -74,7 +76,7 @@
                                 <div class="mb-3">
                                     <label for="personas" class="form-label fw-semibold fs-6">Personas *</label>
                                     <input type="number" class="form-control" id="inputPersonas" required
-                                        placeholder="2" value="2">
+                                        placeholder="2" value="2" oninput="mostrarEstadisticas()">
                                 </div>
                             </div>
 
