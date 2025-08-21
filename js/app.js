@@ -10,14 +10,14 @@ document.getElementById("inputFechaEntrada").min = yesterday.toISOString().split
 //establecemos una fecha default para la fecha de salida.
 
 document.getElementById("inputFechaSalida").value = new Date().toISOString();
-document.getElementById("inputFechaSalida").value = `${today.getDay}-${today.getMonth}-${today.getFullYear}`
+
 
 const cancelarReserva = (event) => {
     const btnCancelar = event.currentTarget;
 
 
     console.log(btnCancelar)
-    btnCancelar.parentElement.parentElement.remove()
+    btnCancelar.parentElement.parentElement.parentElement.remove()
 }
 
 const calcularNumeroNoches = (fechaEntrada, fechaSalida) => {
@@ -119,7 +119,7 @@ const agregarReserva = (event) => {
                     </div>
 
                     <div class="col-12 col-sm-2">
-                        <button class="btn btn-danger" id="btnCancelar" onClick("cancelarReserva(event)")>Cancelar</button>
+                        <button class="btn btn-danger" id="btnCancelar" onClick="cancelarReserva(event)">Cancelar</button>
                     </div>
                 </div>
             </div>`
