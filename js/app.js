@@ -55,6 +55,10 @@ const mostrarEstadisticas = () => {
         total = 0;
     if (Number.isNaN(nNoches))
         nNoches = 0;
+    if (nNoches < 0)
+        nNoches = 0;
+    if (total < 0)
+        total = 0;
 
 
     txtNumeroNoches.innerText = "Noches: " + nNoches;
@@ -80,6 +84,10 @@ const agregarReserva = (event) => {
     const fechaSalidaCard = event.target.inputFechaSalida.value;
 
 
+    if (fechaEntrada > fechaSalida) {
+        alert("la fecha de entrada debe ser menor a la de salida")
+        return;
+    };
     //calculo de cantidad de noches
     const nNoches = calcularNumeroNoches(fechaEntrada, fechaSalida);
     //calculos de reserva
