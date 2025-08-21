@@ -50,6 +50,10 @@ const agregarReserva = (event) => {
     const nPersonas = event.target.inputPersonas.value;
 
 
+    const fechaEntradaCard = event.target.inputFechaEntrada.value;
+    const fechaSalidaCard = event.target.inputFechaSalida.value;
+
+
     //calculo de cantidad de noches
     const nNoches = calcularNumeroNoches(fechaEntrada, fechaSalida);
     //calculos de reserva
@@ -74,9 +78,9 @@ const agregarReserva = (event) => {
                         </div>
 
                         <div class="card-subtitle d-flex align-items-center" style="gap: 10px;">
-                            <h5 class="fw-light fs-5" id="fechaEntrada">${fechaEntrada.toLocaleDateString()}</h5>
+                            <h5 class="fw-light fs-5" id="fechaEntrada">${fechaEntradaCard}</h5>
                             <h5 class="fw-light fs-5">=></h5>
-                            <h5 class="fw-light fs-5" id="fechaSalida">${fechaSalida.toLocaleDateString()}</h5>
+                            <h5 class="fw-light fs-5" id="fechaSalida">${fechaSalidaCard}</h5>
 
                             <h5 class="fw-light fs-5" id="personas">personas: ${nPersonas}</h5>
                             <h5 class="fw-light fs-5">|</h5>
@@ -84,8 +88,7 @@ const agregarReserva = (event) => {
                         </div>
 
                         <div class="card-subtitle d-flex align-items-center" style="gap: 10px;">
-                            <h5 class="fw-bold fs-5" id="fechaEntrada">Total: ${total}</h5>
-                           
+                            <h5 class="fw-bold fs-5" id="fechaEntrada">Total: $${total}</h5>
                         </div>
                     </div>
 
