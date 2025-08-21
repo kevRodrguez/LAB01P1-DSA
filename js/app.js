@@ -25,15 +25,16 @@ const mostrarEstadisticas = (nNoches, total) => {
 const agregarReserva = (event) => {
 
 
+    event.preventDefault();
     //establece precio por defecto
     const PRECIO = 50;
 
-    const nombre = event.inputNombre.value;
-    const email = event.inputEmail.value;
-    const telefono = event.inputTelefono.value;
-    const fechaEntrada = event.inputFechaEntrada.value;
-    const fechaSalida = event.inputFechaSalida;
-    const nPersonas = event.inputPersonas;
+    const nombre = event.target.inputNombre.value;
+    const email = event.target.inputEmail.value;
+    const telefono = event.target.inputTelefono.value;
+    const fechaEntrada = new Date(event.target.inputFechaEntrada.value)
+    const fechaSalida = new Date(event.target.inputFechaSalida.value);
+    const nPersonas = event.target.inputPersonas.value;
 
 
     //calculo de cantidad de noches
@@ -70,8 +71,8 @@ const agregarReserva = (event) => {
                         </div>
 
                         <div class="card-subtitle d-flex align-items-center" style="gap: 10px;">
-                            <h5 class="fw-bold fs-5" id="fechaEntrada">Total: $</h5>
-                            <h5 class="fw-bold fs-5">400</h5>
+                            <h5 class="fw-bold fs-5" id="fechaEntrada">Total: ${total}</h5>
+                           
                         </div>
                     </div>
 
