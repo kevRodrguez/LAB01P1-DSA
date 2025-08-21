@@ -16,15 +16,23 @@ const calcularNumeroNoches = (fechaEntrada, fechaSalida) => {
 const mostrarEstadisticas = () => {
 
 
-    const fechaEntrada = document.getElementById("inputFechaEntrada").value;
-    const fechaSalida = document.getElementById("inputFechaSalida")
-    const nNoches = calcularNumeroNoches()
+    const fechaEntrada = new Date(document.getElementById("inputFechaEntrada").value);
+    const fechaSalida = new Date(document.getElementById("inputFechaSalida").value);
+    const nPersonas = document.getElementById("inputPersonas").value
+    const nNoches = calcularNumeroNoches(fechaEntrada, fechaSalida)
+
+
+    const total = nNoches * 50 * nPersonas;
     const txtNumeroNoches = document.getElementById("txtNumeroNoches");
 
-    const txtTotalReserva = document.getElementById("txtTotalReserva")
+    console.log("estadisticas")
+    console.log(total, nPersonas)
 
-    txtNumeroNoches.innerText = "Noches: " + nNoches;
-    txtTotalReserva.innerText = "Total: " + total;
+
+    const txtTotalReserva = document.getElementById("txtTotal")
+
+    txtNumeroNoches.innerText = "Noches: " + nNoches + "$";
+    txtTotalReserva.innerText = "Total: " + total + "$";
 }
 
 const agregarReserva = (event) => {
