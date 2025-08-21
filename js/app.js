@@ -10,6 +10,7 @@ document.getElementById("inputFechaEntrada").min = yesterday.toISOString().split
 //establecemos una fecha default para la fecha de salida.
 
 document.getElementById("inputFechaSalida").value = new Date().toISOString();
+document.getElementById("inputFechaSalida").value = `${today.getDay}-${today.getMonth}-${today.getFullYear}`
 
 const cancelarReserva = (event) => {
     const btnCancelar = event.currentTarget;
@@ -30,22 +31,33 @@ const calcularNumeroNoches = (fechaEntrada, fechaSalida) => {
 const mostrarEstadisticas = () => {
 
 
+
+
     const fechaEntrada = new Date(document.getElementById("inputFechaEntrada").value);
     const fechaSalida = new Date(document.getElementById("inputFechaSalida").value);
-    const nPersonas = document.getElementById("inputPersonas").value
-    const nNoches = calcularNumeroNoches(fechaEntrada, fechaSalida)
 
-
-    const total = nNoches * 50 * nPersonas;
+    const txtTotalReserva = document.getElementById("txtTotal")
     const txtNumeroNoches = document.getElementById("txtNumeroNoches");
+
+    console.log("fecha salida", fechaSalida)
+
+    const nPersonas = document.getElementById("inputPersonas").value
+    let nNoches = calcularNumeroNoches(fechaEntrada, fechaSalida)
+
+
+    let total = nNoches * 50 * nPersonas;
+
 
     console.log("estadisticas")
     console.log(total, nPersonas)
 
+    if (Number.isNaN(total))
+        total = 0;
+    if (Number.isNaN(nNoches))
+        nNoches = 0;
 
-    const txtTotalReserva = document.getElementById("txtTotal")
 
-    txtNumeroNoches.innerText = "Noches: " + nNoches + "$";
+    txtNumeroNoches.innerText = "Noches: " + nNoches;
     txtTotalReserva.innerText = "Total: " + total + "$";
 }
 
